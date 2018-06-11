@@ -25,9 +25,9 @@ namespace DoTheRightString
         TestResult LongTest();
 
         /// <summary>
-        /// Sets number of iterations for all the tests. Default should be 10,000.
+        /// Sets number of iterations for all the tests. Default should be 1,000,000.
         /// </summary>
         /// <param name="amount"></param>
-        void SetTestIterations(uint amount);
+        void SetTestIterations(int amount);
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DoTheRightString.StringManipulators;
+using System;
 
 namespace DoTheRightString
 {
@@ -7,7 +8,16 @@ namespace DoTheRightString
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            var plusSignTests = new UsingPlusSign(1000000, GetShortArray(), GetMediumArray(), GetLongArray());
+            var shortTestRes = plusSignTests.ShortTest();
+            var mediumTestRes = plusSignTests.MediumTest();
+            var longTestRes = plusSignTests.LongTest();
 
+            Console.WriteLine();
+            Console.WriteLine(string.Format("ShortTest time: {0}", shortTestRes.TestTimeInMiliseconds));
+            Console.WriteLine(string.Format("MediumTest time: {0}", mediumTestRes.TestTimeInMiliseconds));
+            Console.WriteLine(string.Format("LongTest time: {0}", longTestRes.TestTimeInMiliseconds));
+            Console.WriteLine();
             CloseOnKeyPress();
         }
 
@@ -20,6 +30,21 @@ namespace DoTheRightString
             Console.WriteLine("Press any key to close screen");
             Console.ReadKey();
             System.Environment.Exit(1);
+        }
+
+        private static string[] GetShortArray()
+        {
+            return new string[] { "This ", "is ", "short ", "sentence."};
+        }
+
+        private static string[] GetMediumArray()
+        {
+            return new string[] { "Medium ", "test. ", "it. ", "can ", "talk ", "to ", "ghosts" };
+        }
+
+        private static string[] GetLongArray()
+        {
+            return new string[] { "Are ", "you ", "really ", "serious ", "about ", "the ", "length ", "of ", "this ", "test ", "sentence?" };
         }
     }
 }

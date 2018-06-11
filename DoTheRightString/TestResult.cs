@@ -7,12 +7,12 @@ namespace DoTheRightString
     /// <summary>
     /// Provides test result values of String manipulation tests.
     /// </summary>
-    internal class TestResult
+    public class TestResult
     {
         private ulong _testStart;
         private ulong _testFinish;
 
-        internal ulong TestTimeInMiliseconds
+        public ulong TestTimeInMiliseconds
         {
             get
             {
@@ -20,7 +20,7 @@ namespace DoTheRightString
             }
         }
 
-        internal TestResult(ulong start, ulong finish)
+        public TestResult(ulong start, ulong finish)
         {
             _testStart = start;
             _testFinish = finish;
