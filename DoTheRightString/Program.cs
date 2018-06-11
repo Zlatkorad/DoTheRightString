@@ -11,6 +11,10 @@ namespace DoTheRightString
             CloseOnKeyPress();
         }
 
+        /// <summary>
+        /// Just standard console app exit.
+        /// Application waits for key press by user so that user can investigate information on screen.
+        /// </summary>
         static void CloseOnKeyPress()
         {
             Console.WriteLine("Press any key to close screen");
