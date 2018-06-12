@@ -23,10 +23,20 @@ namespace DoTheRightString
             var mediumTestRes = plusSignTests.TestConcatenation(TestStrings.GetMediumList(), iterations);
             var longTestRes = plusSignTests.TestConcatenation(TestStrings.GetLongList(), iterations);
 
+            var stringJoinTests = new UsingStringJoin();
+            var shortTestRes1 = stringJoinTests.TestConcatenation(TestStrings.GetShortList(), iterations);
+            var mediumTestRes1 = stringJoinTests.TestConcatenation(TestStrings.GetMediumList(), iterations);
+            var longTestRes1 = stringJoinTests.TestConcatenation(TestStrings.GetLongList(), iterations);
+
+            var stringbuilderTests = new UsingStringJoin();
+            var shortTestRes2 = stringbuilderTests.TestConcatenation(TestStrings.GetShortList(), iterations);
+            var mediumTestRes2 = stringbuilderTests.TestConcatenation(TestStrings.GetMediumList(), iterations);
+            var longTestRes2 = stringbuilderTests.TestConcatenation(TestStrings.GetLongList(), iterations);
+
             Console.WriteLine();
-            Console.WriteLine(string.Format("ShortTest time: {0}", shortTestRes.TestTimeInMiliseconds));
-            Console.WriteLine(string.Format("MediumTest time: {0}", mediumTestRes.TestTimeInMiliseconds));
-            Console.WriteLine(string.Format("LongTest time: {0}", longTestRes.TestTimeInMiliseconds));
+            Console.WriteLine(string.Format("ShortTest time {0} - {1} - {2}", shortTestRes.TestTimeInMiliseconds, shortTestRes1.TestTimeInMiliseconds, shortTestRes2.TestTimeInMiliseconds));
+            Console.WriteLine(string.Format("MediumTest time: {0} - {1} - {2}", mediumTestRes.TestTimeInMiliseconds, mediumTestRes1.TestTimeInMiliseconds, mediumTestRes2.TestTimeInMiliseconds));
+            Console.WriteLine(string.Format("LongTest time: {0} - {1} - {2}", longTestRes.TestTimeInMiliseconds, longTestRes1.TestTimeInMiliseconds, longTestRes2.TestTimeInMiliseconds));
             Console.WriteLine();
             CloseOnKeyPress();
         }
