@@ -8,6 +8,13 @@ namespace DoTheRightString
 {
     internal class TestEngine
     {
+        /// <summary>
+        /// Performs test using requested Concatenator.
+        /// </summary>
+        /// <param name="concatenator"></param>
+        /// <param name="listForTest"></param>
+        /// <param name="testsToRun"></param>
+        /// <param name="amountOfIterations"></param>
         internal static void PerformTest(IStringConcatenator concatenator, List<string> listForTest, ushort testsToRun, int amountOfIterations)
         {
             List<TestResult> results = new List<TestResult>();

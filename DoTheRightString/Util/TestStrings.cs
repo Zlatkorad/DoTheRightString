@@ -5,6 +5,9 @@ using System.Text;
 
 namespace DoTheRightString.Util
 {
+    /// <summary>
+    /// This class provides lists of string to be used in concatenation testing.
+    /// </summary>
     public class TestStrings
     {
         /// <summary>
@@ -34,15 +37,29 @@ namespace DoTheRightString.Util
             return new List<string>() { "Are ", "you ", "really ", "serious ", "about ", "the ", "length ", "of ", "this ", "test ", "sentence?" };
         }
 
+        /// <summary>
+        /// Returns a list of strings that has 1500 elements (guids)
+        /// </summary>
+        /// <returns></returns>
         public static List<string> GetTooLongList()
         {
-            var bigList = new List<string>();
-            Enumerable.Range(1, 1500).ToList().ForEach((e) =>
+            return GetArbitraryLengthList(1500);
+        }
+
+        /// <summary>
+        /// Generates 'listLength' amount of guids and packs them in nice little list.
+        /// </summary>
+        /// <param name="listLength"></param>
+        /// <returns></returns>
+        public static List<string> GetArbitraryLengthList(int listLength)
+        {
+            var arbitraryList = new List<string>();
+            Enumerable.Range(1, listLength).ToList().ForEach((e) =>
             {
-                bigList.Add(Guid.NewGuid().ToString());
+                arbitraryList.Add(Guid.NewGuid().ToString());
             });
 
-            return bigList;
+            return arbitraryList;
         }
     }
 }

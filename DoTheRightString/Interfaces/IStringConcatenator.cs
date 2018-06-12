@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace DoTheRightString
 {
+    /// <summary>
+    /// Defines what methods does String Concatenator has to have.
+    /// </summary>
     interface IStringConcatenator
     {
         /// <summary>
