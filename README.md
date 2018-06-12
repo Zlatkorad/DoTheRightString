@@ -1,2 +1,2 @@
 # DoTheRightString
-TestingEfficiencyOfStringOperations
+Testing efficiency of string concatenations.
