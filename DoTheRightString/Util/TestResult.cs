@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DoTheRightString
+﻿namespace DoTheRightString.Util
 {
     /// <summary>
     /// Provides test result values of String manipulation tests.

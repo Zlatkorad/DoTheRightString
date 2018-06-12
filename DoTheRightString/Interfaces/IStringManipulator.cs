@@ -1,33 +1,14 @@
-﻿using System;
+﻿using DoTheRightString.Util;
 using System.Collections.Generic;
-using System.Text;
 
 namespace DoTheRightString
 {
-    interface IStringManipulator
+    interface IStringConcatenator
     {
         /// <summary>
-        /// Test string manipulation using short list as source.
+        /// Test string concatenation using provided list, over number of iterations.
         /// </summary>
         /// <returns>Test Result</returns>
-        TestResult ShortTest();
-
-        /// <summary>
-        /// Test string manipulation medium short list as source.
-        /// </summary>
-        /// <returns>Test Result</returns>
-        TestResult MediumTest();
-
-        /// <summary>
-        /// Test string manipulation using long list as source.
-        /// </summary>
-        /// <returns>Test Result</returns>
-        TestResult LongTest();
-
-        /// <summary>
-        /// Sets number of iterations for all the tests. Default should be 1,000,000.
-        /// </summary>
-        /// <param name="amount"></param>
-        void SetTestIterations(int amount);
+        TestResult TestConcatenation(List<string> stringList, int iterations);
     }
 }
