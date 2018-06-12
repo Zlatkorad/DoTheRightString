@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace DoTheRightString.Util
@@ -31,6 +32,17 @@ namespace DoTheRightString.Util
         public static List<string> GetLongList()
         {
             return new List<string>() { "Are ", "you ", "really ", "serious ", "about ", "the ", "length ", "of ", "this ", "test ", "sentence?" };
+        }
+
+        public static List<string> GetTooLongList()
+        {
+            var bigList = new List<string>();
+            Enumerable.Range(1, 1500).ToList().ForEach((e) =>
+            {
+                bigList.Add(Guid.NewGuid().ToString());
+            });
+
+            return bigList;
         }
     }
 }

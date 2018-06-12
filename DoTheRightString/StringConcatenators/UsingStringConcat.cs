@@ -4,20 +4,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace DoTheRightString.StringManipulators
+namespace DoTheRightString.StringConcatenators
 {
-    public class UsingStringBuilder:  IStringConcatenator
+    public class UsingStringConcat : IStringConcatenator
     {
+        public string GetTestName()
+        {
+            return "String.Concat Concatenation test";
+        }
+
         public TestResult TestConcatenation(List<string> stringList, int iterations)
         {
             var start = TimeMachine.GetCurrentTime();
             Enumerable.Range(1, iterations).ToList().ForEach((e) =>
             {
-                StringBuilder sb = new StringBuilder();
-                
-                stringList.ForEach(str => sb.Append(str));
-
-                var endResult = sb.ToString();
+                var endresult = string.Concat(stringList);
             });
 
             var end = TimeMachine.GetCurrentTime();

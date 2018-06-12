@@ -4,10 +4,15 @@ using System.Linq;
 using System.Text;
 using DoTheRightString.Util;
 
-namespace DoTheRightString.StringManipulators
+namespace DoTheRightString.StringConcatenators
 {
     public class UsingStringJoin : IStringConcatenator
     {
+        public string GetTestName()
+        {
+            return "String.Join Concatenation test";
+        }
+
         public TestResult TestConcatenation(List<string> stringList, int iterations)
         {
             var start = TimeMachine.GetCurrentTime();

@@ -2,10 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DoTheRightString.StringManipulators
+namespace DoTheRightString.StringConcatenators
 {
     public class UsingPlusSign : IStringConcatenator
     {
+        public string GetTestName()
+        {
+            return "Plus Sign Concatenation test";
+        }
+
         public TestResult TestConcatenation(List<string> stringList, int iterations)
         {
             var start = TimeMachine.GetCurrentTime();
