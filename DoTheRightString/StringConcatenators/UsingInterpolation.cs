@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using DoTheRightString.Util;
 
 namespace DoTheRightString.StringConcatenators
 {
-    public class UsingStringJoin : IStringConcatenator
+    /// <summary>
+    /// Does concatenation using interpolation
+    /// </summary>
+    public class UsingInterpolation : IStringConcatenator
     {
         /// <summary>
         /// Value after all concatenations
@@ -19,7 +20,7 @@ namespace DoTheRightString.StringConcatenators
         /// <returns></returns>
         public string GetTestName()
         {
-            return "String.Join Concatenation test";
+            return "Interpolation Concatenation test";
         }
 
         /// <summary>
@@ -28,7 +29,7 @@ namespace DoTheRightString.StringConcatenators
         /// <param name="addition"></param>
         public void DoConcatenation(string addition)
         {
-            FinalValue = string.Join(string.Empty, FinalValue, addition);
+            FinalValue = $"{FinalValue}{addition}";
         }
 
         /// <summary>
@@ -42,7 +43,7 @@ namespace DoTheRightString.StringConcatenators
         /// <summary>
         /// Default constructor
         /// </summary>
-        public UsingStringJoin()
+        public UsingInterpolation()
         {
             Reset();
         }

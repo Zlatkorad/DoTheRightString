@@ -11,11 +11,11 @@ namespace DoTheRightString
         /// </summary>
         static void Main()
         {
-            int iterations = 10000;
-            IStringConcatenator testClass = new UsingPlusSign();
+            int iterations = 1000;
+            IStringConcatenator testClass = new UsingStringBuilder();
 
             Console.WriteLine("Starting tests!");
-            TestEngine.PerformTest(testClass, TestStrings.GetShortList(), 5, iterations);
+            TestEngine.PerformTest(testClass, TestStrings.GetArbitraryLengthList(500), 5, iterations);
            
             CloseOnKeyPress();
         }
