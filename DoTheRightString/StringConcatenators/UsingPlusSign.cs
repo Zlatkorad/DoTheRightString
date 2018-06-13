@@ -10,6 +10,11 @@ namespace DoTheRightString.StringConcatenators
     public class UsingPlusSign : IStringConcatenator
     {
         /// <summary>
+        /// Value after all concatenations
+        /// </summary>
+        public string FinalValue { get; private set; }
+
+        /// <summary>
         /// Returns test name that can be used for output.
         /// </summary>
         /// <returns></returns>
@@ -19,21 +24,28 @@ namespace DoTheRightString.StringConcatenators
         }
 
         /// <summary>
-        /// Test string concatenation using provided list, over number of iterations.
+        /// Adds addition to final string.
         /// </summary>
-        /// <returns>Test Result</returns>
-        public TestResult TestConcatenation(List<string> stringList, int iterations)
+        /// <param name="addition"></param>
+        public void DoConcatenation(string addition)
         {
-            var start = TimeMachine.GetCurrentTime();
-            Enumerable.Range(1, iterations).ToList().ForEach((e) =>
-            {
-                var endResult = string.Empty;
-                stringList.ForEach(str => endResult += str);
-            });
+            FinalValue += addition;
+        }
 
-            var end = TimeMachine.GetCurrentTime();
+        /// <summary>
+        /// Resets the final value to empty string to avoid memory leak.
+        /// </summary>
+        public void Reset()
+        {
+            FinalValue = string.Empty;
+        }
 
-            return new TestResult(start, end);
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public UsingPlusSign()
+        {
+            Reset();
         }
     }
 }
