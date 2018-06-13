@@ -18,14 +18,13 @@ namespace DoTheRightString
         /// <param name="amountOfIterations"></param>
         internal static void PerformTest(IStringConcatenator concatenator, List<string> listForTest, ushort testsToRun, int amountOfIterations)
         {
-            //List<TestResult> results = new List<TestResult>();
-
             Console.WriteLine(string.Format("Starting test: {0}, with {1} iterations. Repeating it {2} times.", concatenator.GetTestName(), amountOfIterations, testsToRun));
             Console.Write("Test Results:");
+
             List<long> results = Enumerable.Range(1, testsToRun).Select(e =>
             {
-
                 long elapsed = DoTest(concatenator, listForTest, amountOfIterations);
+
                 Console.Write(string.Format("   {0} - {1} ms", e, elapsed));
                 return elapsed;
 
